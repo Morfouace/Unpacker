@@ -31,7 +31,8 @@ int main()
     ////////////////////////////////////////////////////////////
     /////////////////////// Tree Output ////////////////////////
     ////////////////////////////////////////////////////////////
-    string run_number = buffer.substr(11,4).c_str();
+    int position = buffer.find("run-");
+    string run_number = buffer.substr(position+4,4).c_str();
     TString file_name = "run-"+run_number+".root";
     //--------------- Tree definition ---------------//
     TFile *file = new TFile(file_name,"RECREATE");
